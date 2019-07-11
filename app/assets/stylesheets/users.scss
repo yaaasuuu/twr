@@ -1,0 +1,260 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+chart1 th {
+    margin: 16px 10px;
+    width: 110px;
+    border: solid black 1px;
+    background-color: silver;
+}
+
+.chart2 th {
+    margin: 16px 10px;
+    width: 110px;
+    border: solid black 1px;
+    background-color: silver;
+}
+
+input {
+    margin: 16px 5px;
+}
+
+.chart1 td {
+    margin: 16px 10px;
+    width: 200px;
+    background-color: azure;
+}
+
+div.header ul {
+    list-style: none;
+    text-align: end;
+    margin: 20px 10px 0px 10px;
+}
+
+div.header {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    margin: 0;
+    padding: 10px 0px;
+    width: 100%;
+    height: 60px;
+    background-size: cover;
+    background-color: gold;
+    font-size: 20px;
+    position: fixed;
+}
+
+div.header h1 {
+    float: left;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/*login.html************************/
+td.addBorder {
+    border: solid black 1px;
+}
+
+.chart1 a {
+    font-family: sans-serif;
+}
+
+.chart1 {
+    border: solid black 1px;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 160px;
+}
+
+/*newAccount.html********************/
+.chart2 {
+    border: solid black 1px;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    margin-top: 160px;
+}
+
+.chart2 th {
+    width: 120px;
+}
+
+.chart2 td {
+    background-color: azure;
+    padding: 3px;
+
+}
+
+.chart2 a {
+    font-family: sans-serif;
+}
+
+.mailpw input {
+    width: 177px;
+}
+
+.mailpw textarea {
+    margin: 10px;
+    width: 176px;
+}
+
+/*myAccount.html********************/
+.contentsSet {
+    text-align: right;
+    margin: 20px 10px 0px 10px;
+}
+
+.contentsSet a {
+    margin-left: 8px
+}
+
+.contentsSet p {
+    float: left;
+    text-decoration: none;
+}
+
+.userID {
+    color: silver;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.userName {
+    font-size: 40px;
+    margin: 5px;
+    text-align: center;
+}
+
+.intro {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    font-size: 20px;
+}
+
+.photo {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid rgb(0, 255, 242) 3px;
+}
+
+/*userList.html**********************/
+.memList img {
+    margin: 5px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid rgb(0, 255, 242) 3px;
+}
+
+.memList .userID {
+    border-bottom: solid black 1px;
+    font-size: 20px;
+    margin: 5px 400px;
+}
+
+.memList .userName {
+    font-size: 30px;
+}
+
+.ed {
+    position: absolute;
+    left: 60%;
+    top: 40%;
+}
+
+a.ed-icon {
+    text-decoration: none;
+    color: black;
+}
+
+a.ed-icon:hover {
+    color: blue;
+}
+
+.user-show-2 {
+    margin-top: 0
+}
+/*user show post,like tab*/
+.user-tabs {
+    margin-top: 40px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    list-style: none;
+    text-align: center;
+}
+
+.user-tabs li {
+    display: inline-block;
+}
+
+.user-tabs li.active {
+    border-bottom: 4px solid gold;
+}
+
+.user-tabs li.active a {
+    color: #57575f;
+}
+
+.link-class {
+    text-decoration: none;
+}
+
+.user-tabs a {
+    display: inline-block;
+    padding: 16px 30px;
+    color: #afb6bf;
+}
+
+p.userName {
+    font-size: 20px;
+}
+
+p.detail_post {
+    font-size: 40px;
+}
+
+.follow {
+    position: absolute;
+    left: 60%;
+    top: 40%;
+}
+
+.btn {
+    width: 100px;
+    height: 20px;
+}
+
+.btn-followed {
+    color: white;
+    background-color: rgb(165, 162, 162);
+}
+
+.btn-follow {
+    color: white;
+    background-color: rgb(108, 206, 236);
+}
+
+.content-update {
+    display: block;
+    width: 500px;
+    height: 200px;
+    font-size: 25px;
+    background-color: azure;
+    margin: 0px auto;
+}

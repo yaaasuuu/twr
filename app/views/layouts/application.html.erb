@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tweet3App</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Noto+Sans+JP&amp;subset=japanese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+
+    <div class="contentsSet">
+
+      <%if @current_user%>
+      <%=link_to("ホーム","/posts/#{@current_user.id}/follows")%>
+      <%=link_to("マイページ","/users/#{@current_user.id}")%>
+      <%=link_to("メンバー","/users/index")%>
+      <%=link_to("フォロー一覧","/users/#{@current_user.id}/follows")%>
+      <%=link_to("ログアウト","/logout",{method: :post})%>
+      <%else%>
+      <%= link_to("新規登録","/signup")%>
+      <%= link_to("ログイン","/login")%>
+      </ul>
+      <%end%>
+    </div>
+  </div>
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+
+  <%= yield %>
+
+  <div class="footer">
+
+  </div>
+</body>
+
+</html>

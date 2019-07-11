@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>新規登録</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Acme|Noto+Sans+JP&amp;subset=japanese" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <table class="chart2">
+            <%= form_tag("/users/create",{multipart:true}) do%>
+                <form action="送信先URLを入れる" method="POST">
+                    <tr>
+                        <th>
+                            名前
+                        </th>
+                        <td class="addBorder">
+                            <input name ="name" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            アカウント名
+                        </th>
+                        <td class="addBorder">
+                            <a>@</a><input name ="account_name" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            メールアドレス
+                        </th>
+                        <td class="addBorder mailpw">
+                            <input  name = "email" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            パスワード
+                        </th>
+                        <td class="addBorder mailpw">
+                            <input name = "password" type="password">
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th>
+                            自己紹介
+                        </th>
+                        <td class="mailpw">
+                            <textarea name="profile" cols="20" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="登録">
+                        </td>
+                    </tr>
+                </form>
+            <%end%>
+            </table>
+        </div>
+    </body>
+</html>

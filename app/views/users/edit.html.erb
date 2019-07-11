@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>アカウント編集</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Acme|Noto+Sans+JP&amp;subset=japanese" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <%= form_tag("/users/#{@user.id}/update",{multipart:true}) do%>
+            <table class="chart2">
+                <form action="送信先URLを入れる" method="POST" enctype="multipart/form-data">
+                    <tr>
+                        <th>
+                            アイコン
+                        </th>
+                        <td>
+                            <input type="file" name="image" accept="image/*">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                           名前
+                        </th>
+                        <td class="addBorder">
+                            <!--アカウント名は編集させず表示するだけがよくない？-->
+                            <input name = "name" value = "<%= @user.name %>">
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <th>
+                           アカウント名
+                        </th>
+                        <td class="addBorder">
+                            <!--アカウント名は編集させず表示するだけがよくない？-->
+                            <a>@</a><%= @user.account_name%>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            メールアドレス
+                        </th>
+                        <td class="addBorder mailpw">
+                           <input name = "email" value = "<%= @user.email %>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            パスワード
+                        </th>
+                        <td class="addBorder mailpw">
+                            <input type="password" name = "password" value = "<%= @user.password%>">
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th>
+                            自己紹介
+                        </th>
+                        <td class="mailpw">
+                            <textarea name="profile" cols="20" rows="5" ><%=@user.profile%></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="編集完了">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+            <%end%>
+        </div>
+    </body>
+</html>

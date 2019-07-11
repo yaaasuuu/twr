@@ -1,0 +1,46 @@
+<div class="main posts-detail">
+    <div class="container">
+        <div class="posts-detail-item">
+            <div class="post_user">
+                <img class="photo" src="<%= "/user_images/#{@user.image_name}" %>">
+                <p class="userName"><%= link_to(@user.name, "/users/#{@user.id}",class: "userName") %></p>
+                <p class="userID">@<%=@user.account_name%></p>
+            </div>
+            <p class="detail_post">
+                <%= @post.content %>
+            </p>
+            <!--youtube埋め込み-->
+            <!--youtubeの画面サイズはposts_controller内findyoutubeメソッド-->
+            <!--youtubeの画面のcss用クラス名は"youtube-disp"-->
+            <% if find_youtube(@post.content) %>
+                <%= find_youtube(@post.content).html_safe %>
+            <% end %>
+            <% if @post.image_name %>
+                <%= image_tag("/post_images/#{@post.image_name}", class: 'post_image') %>
+            <% end %>
+            <div class="post-time">
+                <%= @post.created_at.strftime('%Y年%m月%d日 %H時%M分%S秒') %>
+            </div>
+            <div class="like">
+                <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                    <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+                        <span class="fa fa-heart like-btn-unlike"></span>
+                    <% end %> 
+                <% else %>
+                    <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+                        <span class="fa fa-heart like-btn"></>
+                    <% end %>
+                <% end %>
+                <%= @likes_count %>
+            </div>
+            <div class="post-menus">
+                <% if @post.user_id == @current_user.id %>
+                    <div class="post-menus">
+                    <%= link_to("編集", "/posts/#{@post.id}/edit", class: "ed-icon") %>
+                    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post", class: "ed-icon"}) %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

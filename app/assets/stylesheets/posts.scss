@@ -1,0 +1,75 @@
+/*posts/index**************************/
+.post form{
+    justify-content: center;
+    align-items: center;
+}
+.post textarea {
+    display: block;
+    width: 500px;
+    height: 200px;
+    font-size: 25px;
+    font-family: 'Kosugi Maru', sans-serif;
+    background-color: azure;
+    margin: 0px auto;
+}
+
+.post .botton{
+    margin: 1px auto;
+    text-align: center;
+}
+.post input {
+    margin: 0;
+}
+/*posts/detail************************/
+// いいねボタン
+.like-btn{
+    color: #8899a6;
+ }
+  
+.like-btn-unlike{
+    color: #ff2581;
+}
+
+.posts-show-item .fa {
+    font-size: 16px;
+    margin-right: 3px;
+}
+
+.posts_index_item {
+    border-bottom: solid rgb(255, 123, 0) 1px;
+    margin: -1px 400px;
+ }
+ .post_left img{
+     width: 50px;
+     height: 50px;
+ }
+ .post_left{
+     border-top: solid rgb(255, 123, 0) 1px;
+     margin: 10px 60% 0px 40%;
+     display: block;
+     position: relative;
+     width: 50px;
+     height: 50px;
+     position: relative;
+     overflow: hidden;
+     border-radius: 50%;
+     border: solid rgb(0, 255, 242) 3px;
+ }
+ .post_user_name{
+     position: relative;
+     bottom: 40px;
+     font-size: 20px;
+ }
+ a.user-name-post-index {
+     text-decoration: none;
+     color: black;
+ }
+ a.user-name-post-index:hover {
+     color: blue;
+ }
+
+ .like {
+     margin:15px;
+ }
+
+ 

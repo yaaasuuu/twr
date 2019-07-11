@@ -1,0 +1,45 @@
+<div class="main user-show-2">
+    <div class="ed">
+        <% if @user.id == @current_user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit",class: "ed-icon") %>
+        <%= link_to("削除", "/users/#{@user.id}/destroy",{method:"post", class: "ed-icon"})%>
+        <% end %>
+    </div>
+    <div class="follow">
+        <% if @user.id != @current_user.id %>
+        <% if Follow.find_by(user_id: @current_user.id, at_user_id: @user.id) %>
+        <%= button_to("フォロー済み", "/follows/#{@user.id}/destroy", {method: "post",class: 'btn btn-followed'}) %>
+        <% else %>
+        <%= button_to("フォロー","/follows/#{@user.id}/create",{method:"post",class: 'btn btn-follow'})%>
+        <% end %>
+        <%end%>
+    </div>
+    <div class="main">
+        <div class="photo">
+            <!--画像を切り向かせるときに正方形指定(Twitterと同じ)で切り抜いてほしい-->
+            <img src="<%="/user_images/#{@user.image_name}"%>" alt="IMG" width="200" height="200">
+        </div>
+        <!--↓データベースから値をもってこれるように書き換えて。a要素の@はできれば残してほしい-->
+        <p class="userName"><%=@user.name%></p>
+        <p class="userID">@<%=@user.account_name%></p>
+        <p class="intro"><%=@user.profile%></p>
+    </div>
+
+    <ul class="user-tabs">
+        <li class="active"><%= link_to("投稿", "/users/#{@user.id}", class: "link-class") %></li>
+        <li><%= link_to("いいね!", "/users/#{@user.id}/likes", class: "link-class") %></li>
+    </ul>
+    <% @user.posts.each do |post| %>
+    <div class="posts_index_item">
+        <div class="post_left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post_right">
+            <div class="post_user_name">
+                <%= link_to(post.user.name, "/users/#{post.user.id}",class: "user-name-post-index") %>
+            </div>
+            <%= link_to(post.content, "/posts/#{post.id}",class: "post-content") %>
+        </div>
+    </div>
+    <% end %>
+</div>

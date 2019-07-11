@@ -1,0 +1,40 @@
+<div class="main posts-index">
+    <!-- errorの表記 0字投稿など -->
+    <% @post.errors.full_messages.each do |message| %>
+    <div class="form-error">
+        <%= message %>
+    </div>
+    <% end %>
+    <!--投稿フォーム　文章、画像-->
+    <div class="main post">
+        <%= form_tag("/posts/create", {multipart: true}) do %>
+        <!--文章-->
+        <textarea name="content"><%= @post.content %></textarea>
+        <!--画像-->
+        <input name="image" type="file">
+        <div class="botton">
+            <input type="submit" value="投稿">
+        </div>
+        <% end %>
+    </div>
+    <!--ツイート一覧-->
+    <div class="container">
+        <% @posts.each do |post| %>
+        <div class="post_left">
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post_right">
+            <div class="post_user_name">
+                <%= link_to(post.user.account_name, "/users/#{post.user.id}", class: "user-name-post-index") %>
+            </div>
+            <div class="posts_index_item">
+                <%= link_to(post.content, "/posts/#{post.id}",class: "post-content") %>
+            </div>
+            <!--画像があれば表示-->
+            <% if post.image_name %>
+            <%= link_to(image_tag("/post_images/#{post.image_name}", class: 'post_image'), "/posts/#{post.id}") %>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+</div>

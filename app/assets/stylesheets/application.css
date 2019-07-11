@@ -1,0 +1,80 @@
+/*
+*= require_self
+*= require_tree .
+*/
+/*全般*******************************/
+
+.chart1 th{
+    margin:16px 10px;
+    width: 110px;
+    border:solid black 1px;
+    background-color: silver;
+}
+.chart2 th{
+    margin:16px 10px;
+    width: 110px;
+    border:solid black 1px;
+    background-color: silver;
+}
+input{
+    margin:16px 5px;
+}
+.chart1 td{
+    margin:16px 10px;
+    width: 200px;
+    background-color: azure;
+}
+Body{
+    margin: 0;
+    font-family: 'Kosugi Maru', sans-serif;
+    background-color: rgba(251, 255, 0, 0.178);
+}
+div.header ul{
+    list-style: none;
+    text-align: end;
+    margin: 20px 10px 0px 10px;
+}
+div.header{
+    display: inline-block;
+    position:  absolute;
+    left: 0px; top: 0px; z-index: 10;
+    margin: 0;
+    padding: 10px 0px;
+    width: 100%;
+    height: 60px;
+    background-size:cover;
+    background-color: gold;
+    font-size: 20px;
+    position: fixed;
+}
+div.header a {
+    text-decoration: none;
+    color: black;
+}
+div.header a:hover {
+    color: blue;
+}
+div.header h1 {
+    float:left;
+    margin:10px;
+}
+.main {
+    margin-top: 160px;
+    text-align: center;
+}
+a.post-content {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+a.post-content:hover {
+    color: blue;
+}
+a.userName {
+    text-decoration: none;
+    color: black;
+}
+a.userName:hover {
+    color: blue;
+}
+

@@ -1,0 +1,9 @@
+<div class="main">
+    <div class="memList">
+        <% @users.each  do |user|%>
+        <img src="<%="/user_images/#{user.image_name}"%>" alt="IMG" width="100" height="100">
+        <p><%= link_to(user.name,"/users/#{user.id}",class: "userName")%></p>
+        <p class="userID"><a>@</a><%= user.account_name%></p>
+        <%end%>
+    </div>
+</div>
